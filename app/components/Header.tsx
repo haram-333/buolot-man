@@ -430,13 +430,13 @@ export default function Header() {
       <img src="/boulotman-logo.png" alt="Boulot Man">
     </div>
     <nav class="bm-main-nav">
-      <a href="#">Find Tasks</a>
+      <a href="/search">Find Tasks</a>
       <a href="#">Technicians</a>
       <a href="#">Companies</a>
       <a href="#">How It Works</a>
-      <a href="#" class="bm-main-btn bm-main-btn-outline">Login</a>
-      <a href="#" class="bm-main-btn bm-main-btn-outline">Sign Up</a>
-      <a href="#" class="bm-main-btn bm-main-btn-primary">Post a Task</a>
+      <a href="/login" class="bm-main-btn bm-main-btn-outline">Login</a>
+      <a href="/signup" class="bm-main-btn bm-main-btn-outline">Sign Up</a>
+      <a href="/post-task" class="bm-main-btn bm-main-btn-primary">Post a Task</a>
     </nav>
     <div class="bm-main-hamburger" id="bmMainHamburger">
       <div class="bm-main-hamburger-bars">
@@ -446,12 +446,12 @@ export default function Header() {
     </div>
   </div>
   <div class="bm-main-mobile-menu" id="bmMainMobileMenu">
-    <a href="#">Find Tasks</a>
+    <a href="/search">Find Tasks</a>
     <a href="#">Technicians</a>
     <a href="#">Companies</a>
-    <a href="#">Login</a>
-    <a href="#">Sign Up</a>
-    <a href="#">Post a Task</a>
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+    <a href="/post-task">Post a Task</a>
   </div>
 </header>
 `,

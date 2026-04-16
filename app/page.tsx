@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -137,7 +138,7 @@ export default function Home() {
                 <div className="category-count">860 technicians</div>
               </div>
 
-              <div className="card category-card" data-media-type="banani-button">
+              <Link href="/categories/electrical" className="card category-card" data-media-type="banani-button">
                 <div className="category-icon">
                   <div className="icon-wrap" style={{ fontSize: '28px' }}>
                     <iconify-icon icon="lucide:zap"></iconify-icon>
@@ -149,7 +150,7 @@ export default function Home() {
                   service.
                 </p>
                 <div className="category-count">1,120 technicians</div>
-              </div>
+              </Link>
 
               <div className="card category-card" data-media-type="banani-button">
                 <div className="category-icon">
@@ -884,7 +885,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="cta-actions">
-                <a className="btn btn-secondary" data-media-type="banani-button"
+                <a href="/search" className="btn btn-secondary" data-media-type="banani-button"
                   >Browse services</a
                 >
                 <a className="btn btn-primary" data-media-type="banani-button"

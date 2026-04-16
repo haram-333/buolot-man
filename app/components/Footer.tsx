@@ -67,21 +67,23 @@ const translations: Record<string, Record<string, string>> = {
 };
 
 export default function Footer() {
-  const [lang, setLangState] = useState("en");
-  const [country, setCountryState] = useState("Rwanda");
+  const [lang, setLangState] = useState(() => {
+    if (typeof window === "undefined") return "en";
+
+    const saved = localStorage.getItem("lang");
+    const browser = (navigator.language || "en").slice(0, 2);
+    return saved || (translations[browser] ? browser : "en");
+  });
+  const [country, setCountryState] = useState(() => {
+    if (typeof window === "undefined") return "Rwanda";
+    return localStorage.getItem("country") || "Rwanda";
+  });
   const [langOpen, setLangOpen] = useState(false);
   const [countryOpen, setCountryOpen] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("lang");
-    const browser = (navigator.language || "en").slice(0, 2);
-    const resolved = saved || (translations[browser] ? browser : "en");
-    setLangState(resolved);
-    if (resolved === "ar") document.documentElement.dir = "rtl";
-
-    const savedCountry = localStorage.getItem("country");
-    if (savedCountry) setCountryState(savedCountry);
-  }, []);
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  }, [lang]);
 
   const t = translations[lang] || translations["en"];
 
